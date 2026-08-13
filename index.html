@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>50 Aulas de Yoga Prontas — Para Professores</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700;1,900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;overflow-x:hidden;background:#F5F0E8}
+
+/* ─── PALETA ─── */
+:root{
+  --verde-fundo:#1C3228;    /* hero e footer */
+  --verde-salvia:#7A9E7E;   /* cor do nicho */
+  --verde-suave:#A8C4A0;    /* detalhe claro */
+  --verde-mint:#E4EFE1;     /* fundo seção sálvia */
+  --terracota:#B85C38;      /* oferta */
+  --terracota-claro:#F2D5C4;/* bg oferta */
+  --creme:#F5F0E8;          /* bg principal */
+  --areia:#EDE5D8;          /* bg alternado */
+  --branco:#FFFFFF;
+  --texto:#1C1C18;
+  --texto-medio:#4A4640;
+  --texto-suave:#7A756E;
+  --branco-op65:rgba(255,255,255,0.65);
+  --branco-op35:rgba(255,255,255,0.35);
+}
+
+/* ─── HERO — verde floresta escuro ─── */
+.hero{
+  background:var(--verde-fundo);
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:100vh;position:relative;overflow:hidden;
+}
+.hero-orb{
+  position:absolute;bottom:-100px;right:0;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(122,158,126,0.10) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-left{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:100px 48px 100px 80px;position:relative;z-index:2;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--verde-suave);margin-bottom:28px;
+  animation:fadeup .6s ease both;
+}
+.hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--verde-suave)}
+
+/* headline em dois blocos: quantidade+nicho em destaque, promessa em baixo */
+.h1-bloco{margin-bottom:20px;animation:fadeup .65s .08s ease both}
+.h1-quantidade{
+  font-family:'Fraunces',serif;font-weight:900;font-style:italic;
+  font-size:clamp(52px,6.5vw,88px);line-height:.92;
+  color:#D4B483;display:block;
+}
+.h1-nicho{
+  font-family:'Fraunces',serif;font-weight:900;
+  font-size:clamp(38px,4.6vw,62px);line-height:1.0;
+  color:#fff;display:block;
+}
+.h1-promessa{
+  font-family:'Fraunces',serif;font-weight:700;font-style:italic;
+  font-size:clamp(22px,2.8vw,36px);line-height:1.1;
+  color:rgba(255,255,255,.48);display:block;margin-top:6px;
+  animation:fadeup .65s .14s ease both;
+}
+
+.hero-p{
+  font-size:16px;font-weight:300;line-height:1.7;
+  color:var(--branco-op65);max-width:400px;margin-bottom:44px;
+  animation:fadeup .65s .20s ease both;
+}
+.hero-p strong{color:#fff;font-weight:500}
+
+.cta-group{animation:fadeup .65s .26s ease both;display:flex;flex-direction:column;gap:14px}
+.btn-cta{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--terracota);color:#fff;
+  font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;
+  padding:17px 32px;border-radius:4px;border:none;
+  cursor:pointer;text-decoration:none;width:fit-content;
+  transition:background .18s,transform .12s;
+}
+.btn-cta:hover{background:#9E4C2E;transform:translateY(-1px)}
+.hero-nota{font-size:12px;color:var(--branco-op35);letter-spacing:.04em}
+
+/* PAINEL DIREITO — aula de amostra */
+.hero-right{
+  display:flex;align-items:center;justify-content:center;
+  padding:60px 64px 60px 24px;position:relative;z-index:2;
+  animation:fadeup .85s .3s ease both;
+}
+.aula-sample{
+  width:100%;max-width:360px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.11);
+  border-radius:14px;overflow:hidden;
+}
+.as-head{
+  background:rgba(255,255,255,.05);
+  border-bottom:1px solid rgba(255,255,255,.09);
+  padding:20px 22px 18px;
+}
+.as-eyebrow{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#D4B483;margin-bottom:8px}
+.as-titulo{font-family:'Fraunces',serif;font-size:17px;font-weight:800;color:#fff;line-height:1.2;margin-bottom:12px}
+.as-pills{display:flex;gap:7px;flex-wrap:wrap}
+.as-pill{font-size:10px;font-weight:500;padding:4px 10px;border-radius:100px;border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.6)}
+.as-pill.dest{background:rgba(122,158,126,.18);border-color:rgba(122,158,126,.4);color:var(--verde-suave)}
+.as-poses{padding:6px 0}
+.as-fase{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.25);padding:10px 22px 4px}
+.as-pose{
+  display:grid;grid-template-columns:44px 1fr 38px;
+  align-items:center;padding:9px 22px;
+  border-bottom:1px solid rgba(255,255,255,.05);
+  transition:background .15s;
+}
+.as-pose:last-of-type{border-bottom:none}
+.as-pose:hover{background:rgba(255,255,255,.04)}
+.pose-icon{width:36px;height:36px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pose-icon svg{width:30px;height:30px}
+.pose-info{padding:0 10px}
+.pose-pt{font-size:12px;font-weight:500;color:rgba(255,255,255,.88);line-height:1.2;margin-bottom:2px}
+.pose-sa{font-size:10px;font-weight:300;color:rgba(255,255,255,.35);font-style:italic}
+.pose-tempo{font-size:11px;font-weight:600;color:#D4B483;text-align:right;white-space:nowrap}
+.as-footer{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding:12px 22px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.as-footer-txt{font-size:11px;color:rgba(255,255,255,.28);font-style:italic}
+.as-footer-badge{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:rgba(122,158,126,.15);border:1px solid rgba(122,158,126,.3);color:var(--verde-suave);padding:4px 10px;border-radius:100px}
+.stack{display:none}
+.carta-n,.carta-titulo,.carta-pills,.cpill,.stack-note{}
+
+/* ─── SEÇÕES ─── */
+.sec{padding:96px 80px}
+
+/* seção creme claro */
+.s-creme{background:var(--creme)}
+/* seção branco */
+.s-branco{background:var(--branco)}
+/* seção areia */
+.s-areia{background:var(--areia)}
+/* seção sálvia */
+.s-salvia{background:var(--verde-mint)}
+/* seção terracota — oferta */
+.s-terra{background:var(--terracota-claro)}
+/* seção verde escuro */
+.s-verde{background:var(--verde-fundo)}
+
+/* label de seção */
+.slabel{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px}
+.sl-verde{color:var(--verde-salvia)}
+.sl-terra{color:var(--terracota)}
+.sl-dark{color:var(--verde-fundo)}
+
+/* headline padrão */
+.hed{
+  font-family:'Fraunces',serif;font-weight:900;line-height:1.05;
+  font-size:clamp(30px,3.8vw,50px);color:var(--texto);margin-top:12px;
+}
+.hed em{font-style:italic;color:var(--verde-salvia)}
+.hed-white{color:#fff}
+.hed-white em{color:#D4B483}
+
+/* ─── DOR — creme ─── */
+.dor-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.dor-items{display:flex;flex-direction:column;gap:26px}
+.dor-item{display:flex;gap:18px;align-items:flex-start}
+.dor-ic{
+  width:42px;height:42px;min-width:42px;border-radius:8px;
+  background:var(--areia);border:1px solid rgba(122,158,126,.3);
+  display:flex;align-items:center;justify-content:center;
+}
+.dor-ic svg{width:18px;height:18px;stroke:var(--verde-salvia);stroke-width:1.8;fill:none;stroke-linecap:round}
+.dor-txt h3{font-size:15px;font-weight:600;color:var(--texto);margin-bottom:4px}
+.dor-txt p{font-size:14px;font-weight:300;color:var(--texto-medio);line-height:1.6}
+
+/* ─── PRODUTO — branco ─── */
+.prod-top{text-align:center;margin-bottom:56px}
+.prod-top .hed{margin-top:10px}
+.prod-sub{font-size:16px;font-weight:300;color:var(--texto-medio);max-width:500px;margin:14px auto 0;line-height:1.65}
+
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-bottom:56px;border-radius:10px;overflow:hidden}
+.num-b{
+  background:var(--creme);
+  padding:36px 24px;text-align:center;
+}
+.num-n{font-family:'Fraunces',serif;font-size:58px;font-weight:900;color:var(--verde-fundo);line-height:1;margin-bottom:8px}
+.num-l{font-size:13px;font-weight:300;color:var(--texto-medio);line-height:1.5}
+
+.aulas-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:28px}
+.aula-mini{
+  background:var(--creme);border:1px solid var(--areia);
+  border-radius:8px;padding:18px 16px;
+  transition:border-color .2s,background .2s;
+}
+.aula-mini:hover{border-color:var(--verde-salvia);background:#fff}
+.am-n{font-family:'Fraunces',serif;font-size:11px;font-weight:800;color:var(--verde-salvia);margin-bottom:8px;letter-spacing:.06em}
+.am-nome{font-size:13px;font-weight:500;color:var(--texto);line-height:1.35;margin-bottom:10px}
+.am-tags{display:flex;flex-wrap:wrap;gap:5px}
+.am-tag{font-size:10px;padding:3px 8px;border-radius:100px;background:var(--areia);color:var(--texto-medio)}
+.mais{text-align:center;font-size:13px;color:var(--texto-suave);letter-spacing:.04em;padding:18px;border:1px dashed #D5CEC5;border-radius:8px}
+
+/* ─── O QUE INCLUI — verde sálvia ─── */
+.inclui-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.inclui-lista{list-style:none;display:flex;flex-direction:column;gap:14px;margin-top:28px}
+.inclui-lista li{display:flex;gap:14px;align-items:flex-start;font-size:15px;color:var(--texto);line-height:1.5}
+.chk{
+  width:22px;height:22px;min-width:22px;border-radius:50%;
+  background:rgba(122,158,126,.18);border:1px solid rgba(122,158,126,.4);
+  display:flex;align-items:center;justify-content:center;margin-top:1px;
+}
+.chk svg{width:10px;height:10px;stroke:var(--verde-fundo);stroke-width:2.8;fill:none;stroke-linecap:round}
+
+/* card exemplo de sequência */
+.ex-card{
+  background:#fff;border-radius:12px;
+  border:1px solid rgba(122,158,126,.2);
+  padding:32px 28px;
+  box-shadow:0 4px 32px rgba(28,50,40,.06);
+}
+.ex-eyebrow{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--verde-salvia);margin-bottom:8px}
+.ex-titulo{font-family:'Fraunces',serif;font-size:18px;font-weight:800;color:var(--verde-fundo);margin-bottom:16px;line-height:1.25}
+.ex-pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.ex-pill{font-size:11px;padding:4px 11px;border-radius:100px;border:1px solid #D5CEC5;color:var(--texto-medio)}
+.pose-linha{
+  display:flex;align-items:center;gap:12px;
+  font-size:13px;color:var(--texto-medio);
+  padding:8px 0;border-bottom:1px solid var(--creme);
+}
+.pose-linha:last-child{border-bottom:none}
+.pdot{width:5px;height:5px;border-radius:50%;background:var(--verde-salvia);flex-shrink:0}
+.ptempo{margin-left:auto;font-size:11px;color:var(--texto-suave)}
+
+/* ─── TEMPO — areia ─── */
+.tempo-top{text-align:center;margin-bottom:52px}
+.hed-tempo{font-family:'Fraunces',serif;font-size:clamp(32px,4.2vw,54px);font-weight:900;color:var(--verde-fundo);line-height:1.05;max-width:680px;margin:12px auto 16px}
+.hed-tempo em{font-style:italic;color:var(--terracota)}
+.tempo-sub{font-size:15px;font-weight:300;color:var(--texto-medio);max-width:460px;margin:0 auto;line-height:1.65}
+.calc{display:grid;grid-template-columns:1fr 44px 1fr 44px 1fr;align-items:center;max-width:760px;margin:0 auto}
+.calc-b{
+  background:#fff;border:1px solid #DDD8D0;
+  border-radius:10px;padding:30px 18px;text-align:center;
+}
+.calc-n{font-family:'Fraunces',serif;font-size:42px;font-weight:900;line-height:1;margin-bottom:8px}
+.antes .calc-n{color:#B85C38}
+.depois .calc-n{color:var(--verde-fundo)}
+.neutro .calc-n{color:var(--texto)}
+.calc-d{font-size:12px;font-weight:300;color:var(--texto-medio);line-height:1.5}
+.op{font-family:'Fraunces',serif;font-size:28px;font-weight:900;color:var(--verde-salvia);text-align:center}
+
+/* ─── BÔNUS — branco ─── */
+.bonus-top{text-align:center;margin-bottom:48px}
+.bonus-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:860px;margin:0 auto}
+.bonus-card{
+  background:var(--creme);border:1px solid #DDD8D0;
+  border-radius:12px;padding:36px 32px;
+}
+.bonus-ic{
+  width:48px;height:48px;border-radius:10px;
+  background:var(--verde-mint);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:20px;
+}
+.bonus-ic svg{width:22px;height:22px;stroke:var(--verde-fundo);stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.bonus-badge{
+  font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--verde-salvia);margin-bottom:10px;display:block;
+}
+.bonus-titulo{font-family:'Fraunces',serif;font-size:21px;font-weight:800;color:var(--verde-fundo);line-height:1.2;margin-bottom:10px}
+.bonus-desc{font-size:14px;font-weight:300;color:var(--texto-medio);line-height:1.7}
+
+/* ─── OFERTA — terracota claro ─── */
+.oferta-box{
+  max-width:540px;margin:0 auto;
+  background:#fff;border:1px solid rgba(184,92,56,.18);
+  border-radius:16px;padding:52px 48px;text-align:center;
+  box-shadow:0 8px 48px rgba(184,92,56,.1);
+}
+.oferta-nome{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--terracota);margin-bottom:18px}
+.oferta-hed{font-family:'Fraunces',serif;font-size:clamp(24px,3vw,34px);font-weight:900;color:var(--verde-fundo);line-height:1.15;margin-bottom:32px}
+.oferta-itens{
+  text-align:left;border-top:1px solid #EDE5D8;
+  margin:0 0 28px;padding-top:24px;
+  display:flex;flex-direction:column;gap:11px;
+}
+.oferta-item{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--texto-medio)}
+.ochk{
+  width:20px;height:20px;min-width:20px;border-radius:50%;
+  background:rgba(122,158,126,.15);border:1px solid rgba(122,158,126,.35);
+  display:flex;align-items:center;justify-content:center;
+}
+.ochk svg{width:9px;height:9px;stroke:var(--verde-salvia);stroke-width:2.5;fill:none;stroke-linecap:round}
+.de{font-size:13px;color:#B0A99E;text-decoration:line-through;margin-bottom:4px}
+.preco{font-family:'Fraunces',serif;font-size:66px;font-weight:900;color:var(--verde-fundo);line-height:1;margin-bottom:4px}
+.preco sup{font-size:26px;vertical-align:super}
+.parcel{font-size:13px;color:var(--texto-suave);margin-bottom:32px}
+.btn-oferta{
+  display:block;background:var(--terracota);color:#fff;
+  font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;
+  padding:18px 36px;border-radius:4px;border:none;cursor:pointer;
+  text-decoration:none;text-align:center;letter-spacing:.01em;
+  transition:background .18s,transform .12s;margin-bottom:14px;
+}
+.btn-oferta:hover{background:#9E4C2E;transform:translateY(-1px)}
+.seg{font-size:12px;color:var(--texto-suave)}
+
+/* ─── FAQ — creme ─── */
+.faq-wrap{max-width:640px;margin:0 auto}
+.faq-hed{font-family:'Fraunces',serif;font-size:clamp(28px,3.5vw,40px);font-weight:900;color:var(--verde-fundo);margin-top:12px;margin-bottom:40px}
+.faq-item{border-bottom:1px solid #DDD8D0;padding:18px 0}
+.faq-q{
+  font-size:15px;font-weight:500;color:var(--texto);
+  cursor:pointer;display:flex;justify-content:space-between;
+  align-items:center;gap:16px;user-select:none;
+}
+.faq-sinal{font-size:20px;font-weight:300;color:var(--verde-salvia);transition:transform .2s;min-width:18px;text-align:center;line-height:1}
+.faq-a{font-size:14px;font-weight:300;color:var(--texto-medio);line-height:1.7;max-height:0;overflow:hidden;transition:max-height .3s ease,padding-top .2s}
+.faq-item.open .faq-a{max-height:280px;padding-top:12px}
+.faq-item.open .faq-sinal{transform:rotate(45deg)}
+
+/* ─── FOOTER — verde escuro ─── */
+.footer{background:var(--verde-fundo);padding:80px;text-align:center}
+.footer-hed{font-family:'Fraunces',serif;font-size:clamp(28px,3.8vw,46px);font-weight:900;color:#fff;margin-top:12px;margin-bottom:14px;line-height:1.1}
+.footer-hed em{font-style:italic;color:#D4B483}
+.footer-sub{font-size:16px;font-weight:300;color:var(--branco-op65);max-width:420px;margin:0 auto 40px;line-height:1.65}
+.btn-footer{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--terracota);color:#fff;
+  font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;
+  padding:17px 32px;border-radius:4px;border:none;cursor:pointer;
+  text-decoration:none;transition:background .18s,transform .12s;
+}
+.btn-footer:hover{background:#9E4C2E;transform:translateY(-1px)}
+
+/* ─── ANIMAÇÃO ─── */
+@keyframes fadeup{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease}
+.rev.vis{opacity:1;transform:translateY(0)}
+
+/* ─── MOBILE ─── */
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr}
+  .hero-left{padding:64px 28px}
+  .hero-right{display:none}
+  .dor-grid,.inclui-grid{grid-template-columns:1fr}
+  .nums{grid-template-columns:1fr}
+  .aulas-grid{grid-template-columns:1fr 1fr}
+  .calc{grid-template-columns:1fr;gap:10px}
+  .op{font-size:24px;padding:4px 0}
+  .bonus-grid{grid-template-columns:1fr}
+  .sec{padding:64px 28px}
+  .oferta-box{padding:36px 24px}
+  .footer{padding:64px 28px}
+}
+</style>
+</head>
+<body>
+
+<!-- ① HERO — verde floresta -->
+<section class="hero">
+  <div class="hero-orb"></div>
+  <div class="hero-left">
+    <div class="hero-eyebrow">Para professores de yoga</div>
+    <div class="h1-bloco">
+      <span class="h1-quantidade">50 aulas</span>
+      <span class="h1-nicho">de yoga prontas</span>
+    </div>
+    <span class="h1-promessa">para você só chegar e ensinar.</span>
+    <p class="hero-p" style="margin-top:28px">Sequências completas com tema, duração, nível e progressão de poses — prontas para dar. Sem montar nada do zero.</p>
+    <div class="cta-group">
+      <a href="#topo-oferta" class="btn-cta">
+        Quero as 50 Aulas Prontas de Yoga
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <span class="hero-nota">Acesso imediato após o pagamento</span>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="aula-sample">
+
+      <!-- CABEÇALHO -->
+      <div class="as-head">
+        <div class="as-eyebrow">Aula 04 · Hatha Suave</div>
+        <div class="as-titulo">Abertura de Ombros e Coluna</div>
+        <div class="as-pills">
+          <span class="as-pill dest">50 min</span>
+          <span class="as-pill">Todos os níveis</span>
+          <span class="as-pill">Manhã</span>
+        </div>
+      </div>
+
+      <!-- POSES -->
+      <div class="as-poses">
+
+        <div class="as-fase">Aquecimento</div>
+
+        <!-- Balasana -->
+        <div class="as-pose">
+          <div class="pose-icon">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- cabeça -->
+              <circle cx="16" cy="5" r="2.2" fill="rgba(212,180,131,0.9)"/>
+              <!-- tronco curvado para frente -->
+              <path d="M16 7.2 C16 10 12 13 8 14" stroke="rgba(212,180,131,0.9)" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+              <!-- braços estendidos à frente -->
+              <path d="M12 11 C9 11 5 11 3 11" stroke="rgba(212,180,131,0.9)" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+              <!-- quadril dobrado, joelhos -->
+              <path d="M16 7.2 L16 14 L13 20 L10 24" stroke="rgba(255,255,255,0.55)" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+              <path d="M16 14 L19 20 L22 24" stroke="rgba(255,255,255,0.55)" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+              <!-- pés no chão -->
+              <path d="M10 24 L8 25" stroke="rgba(255,255,255,0.4)" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M22 24 L24 25" stroke="rgba(255,255,255,0.4)" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="pose-info">
+            <div class="pose-pt">Pose da Criança</div>
+            <div class="pose-sa">Balasana</div>
+          </div>
+          <div class="pose-tempo">3 min</div>
+        </div>
+
+        <!-- Gato/vaca -->
+        <div class="as-pose">
+          <div class="pose-icon">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- cabeça levantada -->
+              <circle cx="6" cy="9" r="2.2" fill="rgba(212,180,131,0.9)"/>
+              <!-- coluna arqueada (vaca) -->
+              <path d="M8 10 C11 12 16 10 21 12 C24 13 26 13 27 13" stroke="rgba(212,180,131,0.9)" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+              <!-- braços/pernas de apoio no chão -->
+              <path d="M12 12 L12 20" stroke="rgba(255,255,255,0.55)" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M20 13 L20 21" stroke="rgba(255,255,255,0.55)" stroke-width="1.6" stroke-linecap="round"/>
+              <!-- mãos/joelhos -->
+              <path d="M10 20 L14 20" stroke="rgba(255,255,255,0.4)" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M18 21 L22 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.4" stroke-linecap="round"/>
+              <!-- rabo/calda sugestivo -->
+              <path d="M27 13 L29 10" stroke="rgba(255,255,255,0.3)" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="pose-info">
+            <div class="pose-pt">Gato / Vaca</div>
+            <div class="pose-sa">Marjaryasana / Bitilasana</div>
+          </div>
+          <div class="pose-tempo">2 min</div>
+        </div>
+
+        <div class="as-fase">Desenvolvimento</div>
+
+        <!-- Cão olhando para baixo -->
+        <div class="as-pose">
+          <div class="pose-icon">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- cabeça para baixo -->
+              <circle cx="6" cy="22" r="2.2" fill="rgba(212,180,131,0.9)"/>
+              <!-- braços ao chão -->
+              <path d="M8 21 L13 16" stroke="rgba(212,180,131,0.9)" stroke-width="1.6" stroke-linecap="round"/>
+              <!-- coluna formando triângulo (quadril no alto) -->
+              <path d="M13 16 L19 10" stroke="rgba(212,180,131,0.9)" stroke-width="1.6" stroke-linecap="round"/>
+              <!-- pernas ao chão -->
+              <path d="M19 10 L24 17" stroke="rgba(255,255,255,0.55)" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M24 17 L26 23" stroke="rgba(255,255,255,0.55)" stroke-width="1.6" stroke-linecap="round"/>
+              <!-- mãos -->
+              <path d="M6 22 L4 24" stroke="rgba(255,255,255,0.4)" stroke-width="1.4" stroke-linecap="round"/>
+              <!-- pés -->
+              <path d="M25 23 L27 24" stroke="rgba(255,255,255,0.4)" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="pose-info">
+            <div class="pose-pt">Cão Olhando para Baixo</div>
+            <div class="pose-sa">Adho Mukha Svanasana</div>
+          </div>
+          <div class="pose-tempo">1 min</div>
+        </div>
+
+        <!-- Pose do coração -->
+        <div class="as-pose">
+          <div class="pose-icon">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- cabeça no chão -->
+              <circle cx="16" cy="24" r="2" fill="rgba(212,180,131,0.9)"/>
+              <!-- quadril levantado, tronco no chão -->
+              <path d="M16 22 C16 18 14 14 12 12" stroke="rgba(212,180,131,0.9)" stroke-width="1.6" stroke-linecap="round"/>
+              <!-- braços estendidos à frente no chão -->
+              <path d="M12 12 L6 10" stroke="rgba(212,180,131,0.9)" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M16 22 C16 18 18 14 20 12" stroke="rgba(255,255,255,0.55)" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M20 12 L26 10" stroke="rgba(255,255,255,0.55)" stroke-width="1.6" stroke-linecap="round"/>
+              <!-- pernas -->
+              <path d="M16 24 L14 30" stroke="rgba(255,255,255,0.35)" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M16 24 L18 30" stroke="rgba(255,255,255,0.35)" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="pose-info">
+            <div class="pose-pt">Pose do Coração</div>
+            <div class="pose-sa">Anahatasana</div>
+          </div>
+          <div class="pose-tempo">3 min</div>
+        </div>
+
+        <div class="as-fase">Pico</div>
+
+        <!-- Guerreiro I -->
+        <div class="as-pose">
+          <div class="pose-icon">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- cabeça -->
+              <circle cx="16" cy="4" r="2.2" fill="rgba(212,180,131,0.9)"/>
+              <!-- braços levantados -->
+              <path d="M16 6 L12 3" stroke="rgba(212,180,131,0.9)" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M16 6 L20 3" stroke="rgba(212,180,131,0.9)" stroke-width="1.6" stroke-linecap="round"/>
+              <!-- tronco reto -->
+              <path d="M16 6 L16 16" stroke="rgba(212,180,131,0.9)" stroke-width="1.6" stroke-linecap="round"/>
+              <!-- perna da frente dobrada -->
+              <path d="M16 16 L12 22 L10 28" stroke="rgba(255,255,255,0.55)" stroke-width="1.6" stroke-linecap="round"/>
+              <!-- perna de trás reta -->
+              <path d="M16 16 L20 20 L22 28" stroke="rgba(255,255,255,0.55)" stroke-width="1.6" stroke-linecap="round"/>
+              <!-- pés -->
+              <path d="M10 28 L7 28" stroke="rgba(255,255,255,0.4)" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M22 28 L25 28" stroke="rgba(255,255,255,0.4)" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="pose-info">
+            <div class="pose-pt">Guerreiro I</div>
+            <div class="pose-sa">Virabhadrasana I</div>
+          </div>
+          <div class="pose-tempo">1 min cada lado</div>
+        </div>
+
+        <div class="as-fase">Finalização</div>
+
+        <!-- Savasana -->
+        <div class="as-pose">
+          <div class="pose-icon">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- corpo deitado -->
+              <circle cx="4" cy="16" r="2.2" fill="rgba(212,180,131,0.9)"/>
+              <!-- tronco horizontal -->
+              <path d="M6 16 L24 16" stroke="rgba(212,180,131,0.9)" stroke-width="1.6" stroke-linecap="round"/>
+              <!-- braços levemente afastados -->
+              <path d="M12 16 L10 21" stroke="rgba(255,255,255,0.5)" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M18 16 L20 21" stroke="rgba(255,255,255,0.5)" stroke-width="1.4" stroke-linecap="round"/>
+              <!-- pernas -->
+              <path d="M24 16 L27 19" stroke="rgba(255,255,255,0.5)" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M24 16 L27 14" stroke="rgba(255,255,255,0.5)" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="pose-info">
+            <div class="pose-pt">Savasana</div>
+            <div class="pose-sa">Pose do Cadáver</div>
+          </div>
+          <div class="pose-tempo">5 min</div>
+        </div>
+
+      </div>
+
+      <!-- RODAPÉ -->
+      <div class="as-footer">
+        <span class="as-footer-txt">+ 13 poses na versão completa</span>
+        <span class="as-footer-badge">Amostra</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ② DOR — creme (respira) -->
+<section class="sec s-creme">
+  <div class="dor-grid">
+    <div class="rev">
+      <div class="slabel sl-verde">A realidade de quem dá aulas</div>
+      <h2 class="hed">Você domina o yoga.<br>A preparação <em>te consome.</em></h2>
+    </div>
+    <div class="dor-items rev">
+      <div class="dor-item">
+        <div class="dor-ic">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div class="dor-txt">
+          <h3>Horas montando antes de cada aula</h3>
+          <p>Professor com 10 a 20 aulas por semana perde até 3 horas só criando sequências.</p>
+        </div>
+      </div>
+      <div class="dor-item">
+        <div class="dor-ic">
+          <svg viewBox="0 0 24 24"><path d="M9 12h6M9 16h6M9 8h6M5 5h14a1 1 0 011 1v12a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1z"/></svg>
+        </div>
+        <div class="dor-txt">
+          <h3>Aulas que ficam parecidas sem querer</h3>
+          <p>Sem referência nova, as sequências se repetem — e os alunos percebem.</p>
+        </div>
+      </div>
+      <div class="dor-item">
+        <div class="dor-ic">
+          <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div class="dor-txt">
+          <h3>Energia que deveria estar na condução</h3>
+          <p>A criatividade que deveria guiar a turma se gasta antes da aula começar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ③ PRODUTO — branco (limpo) -->
+<section class="sec s-branco" id="produto">
+  <div class="prod-top rev">
+    <div class="slabel sl-verde">O que você leva</div>
+    <h2 class="hed">50 aulas prontas para dar</h2>
+    <p class="prod-sub">Sequências organizadas por estilo, nível e duração. Baixa hoje, dá aula amanhã.</p>
+  </div>
+  <div class="nums rev">
+    <div class="num-b"><div class="num-n">50</div><div class="num-l">sequências completas<br>prontas para usar</div></div>
+    <div class="num-b"><div class="num-n">5</div><div class="num-l">estilos — Hatha, Vinyasa,<br>Yin, Power, Restaurativo</div></div>
+    <div class="num-b"><div class="num-n">3</div><div class="num-l">níveis de dificuldade<br>do iniciante ao avançado</div></div>
+  </div>
+  <div class="aulas-grid rev">
+    <div class="aula-mini"><div class="am-n">Aula 01</div><div class="am-nome">Abertura de quadril para iniciantes</div><div class="am-tags"><span class="am-tag">Hatha</span><span class="am-tag">60 min</span><span class="am-tag">Iniciante</span></div></div>
+    <div class="aula-mini"><div class="am-n">Aula 08</div><div class="am-nome">Vinyasa flow — força e fluidez</div><div class="am-tags"><span class="am-tag">Vinyasa</span><span class="am-tag">75 min</span><span class="am-tag">Intermediário</span></div></div>
+    <div class="aula-mini"><div class="am-n">Aula 15</div><div class="am-nome">Yin restaurativo — liberação profunda</div><div class="am-tags"><span class="am-tag">Yin</span><span class="am-tag">90 min</span><span class="am-tag">Todos</span></div></div>
+    <div class="aula-mini"><div class="am-n">Aula 22</div><div class="am-nome">Coluna saudável — foco na lombar</div><div class="am-tags"><span class="am-tag">Hatha</span><span class="am-tag">50 min</span><span class="am-tag">Iniciante</span></div></div>
+    <div class="aula-mini"><div class="am-n">Aula 33</div><div class="am-nome">Inversões e equilíbrio avançado</div><div class="am-tags"><span class="am-tag">Power</span><span class="am-tag">75 min</span><span class="am-tag">Avançado</span></div></div>
+    <div class="aula-mini"><div class="am-n">Aula 40</div><div class="am-nome">Fluxo de manhã com respiração</div><div class="am-tags"><span class="am-tag">Vinyasa</span><span class="am-tag">45 min</span><span class="am-tag">Todos</span></div></div>
+    <div class="aula-mini"><div class="am-n">Aula 47</div><div class="am-nome">Warriors — força e confiança</div><div class="am-tags"><span class="am-tag">Hatha</span><span class="am-tag">60 min</span><span class="am-tag">Intermediário</span></div></div>
+    <div class="aula-mini"><div class="am-n">Aula 50</div><div class="am-nome">Yoga Nidra — relaxamento profundo</div><div class="am-tags"><span class="am-tag">Restaurativo</span><span class="am-tag">60 min</span><span class="am-tag">Todos</span></div></div>
+  </div>
+  <div class="mais rev">+ 42 sequências completas incluídas no kit</div>
+</section>
+
+<!-- ④ O QUE INCLUI — verde sálvia (cor do nicho) -->
+<section class="sec s-salvia">
+  <div class="inclui-grid">
+    <div class="rev">
+      <div class="slabel sl-dark">O que cada sequência inclui</div>
+      <h2 class="hed">Tudo pronto.<br>Você só <em>ensina.</em></h2>
+      <ul class="inclui-lista">
+        <li><div class="chk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div><span><strong>Tema da aula</strong> — objetivo claro para o aluno</span></li>
+        <li><div class="chk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div><span><strong>Sequência pose a pose</strong> com nome em português e sânscrito</span></li>
+        <li><div class="chk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div><span><strong>Tempo de cada pose</strong> — mantém o ritmo sem travar</span></li>
+        <li><div class="chk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div><span><strong>Nível e duração total</strong> — fácil de encaixar na sua grade</span></li>
+        <li><div class="chk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div><span><strong>Progressão lógica</strong> — aquecimento, pico e finalização</span></li>
+        <li><div class="chk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div><span><strong>Sugestão de playlist</strong> para a energia da aula</span></li>
+      </ul>
+    </div>
+    <div class="ex-card rev">
+      <div class="ex-eyebrow">Exemplo — Aula 04</div>
+      <div class="ex-titulo">Abertura de ombros e coluna</div>
+      <div class="ex-pills">
+        <span class="ex-pill">Hatha suave</span>
+        <span class="ex-pill">50 min</span>
+        <span class="ex-pill">Todos os níveis</span>
+      </div>
+      <div class="pose-linha"><div class="pdot"></div><span>Balasana — pose da criança</span><span class="ptempo">3 min</span></div>
+      <div class="pose-linha"><div class="pdot"></div><span>Bitilasana / Marjaryasana</span><span class="ptempo">2 min</span></div>
+      <div class="pose-linha"><div class="pdot"></div><span>Adho Mukha Svanasana</span><span class="ptempo">1 min</span></div>
+      <div class="pose-linha"><div class="pdot"></div><span>Anahatasana — pose do coração</span><span class="ptempo">3 min</span></div>
+      <div class="pose-linha" style="opacity:.42;font-style:italic"><div class="pdot" style="background:#ccc"></div><span>+ 14 poses na sequência completa</span><span class="ptempo">…</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑤ TEMPO — areia (respira) -->
+<section class="sec s-areia">
+  <div class="tempo-top rev">
+    <div class="slabel sl-verde">Por que faz diferença</div>
+    <h2 class="hed-tempo">Mais de <em>25 horas</em><br>de volta por ano</h2>
+    <p class="tempo-sub">Cada aula que você não monta é tempo que volta para ensinar melhor — ou simplesmente descansar.</p>
+  </div>
+  <div class="calc rev">
+    <div class="calc-b antes"><div class="calc-n">30 min</div><div class="calc-d">para montar uma sequência do zero</div></div>
+    <div class="op">×</div>
+    <div class="calc-b neutro"><div class="calc-n">50</div><div class="calc-d">sequências que você não monta mais</div></div>
+    <div class="op">=</div>
+    <div class="calc-b depois"><div class="calc-n">+25h</div><div class="calc-d">de volta para o que importa</div></div>
+  </div>
+</section>
+
+<!-- ⑥ BÔNUS — branco (foco nos cards) -->
+<section class="sec s-branco">
+  <div class="bonus-top rev">
+    <div class="slabel sl-verde">Incluído no kit</div>
+    <h2 class="hed">Dois bônus para o seu dia a dia</h2>
+  </div>
+  <div class="bonus-grid">
+    <div class="bonus-card rev">
+      <div class="bonus-ic">
+        <svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg>
+      </div>
+      <span class="bonus-badge">Bônus 1</span>
+      <div class="bonus-titulo">Guia de Voz do Professor</div>
+      <div class="bonus-desc">Frases prontas de transição e condução para cada pose — como chamar a entrada, o ajuste e a saída com naturalidade. Você para de improvisar no meio da aula e começa a conduzir com mais presença.</div>
+    </div>
+    <div class="bonus-card rev">
+      <div class="bonus-ic">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
+      </div>
+      <span class="bonus-badge">Bônus 2</span>
+      <div class="bonus-titulo">Calendário de Turmas — 30 Dias</div>
+      <div class="bonus-desc">Grade mensal pronta indicando qual sequência usar em cada aula, organizada por progressão e variedade de estilo. Seu mês de aulas inteiro planejado em menos de 5 minutos.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑦ OFERTA — terracota claro (destaque) -->
+<div id="topo-oferta"></div>
+<section class="sec s-terra" id="oferta">
+  <div class="oferta-box rev">
+    <div class="oferta-nome">Kit 50 Aulas Prontas de Yoga</div>
+    <h2 class="oferta-hed">Sequências completas.<br>Acesso imediato.</h2>
+    <div class="oferta-itens">
+      <div class="oferta-item"><div class="ochk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div>50 sequências prontas para dar</div>
+      <div class="oferta-item"><div class="ochk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div>5 estilos — Hatha, Vinyasa, Yin, Power, Restaurativo</div>
+      <div class="oferta-item"><div class="ochk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div>PDF — funciona no celular, tablet e impresso</div>
+      <div class="oferta-item"><div class="ochk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div>Acesso vitalício</div>
+      <div class="oferta-item"><div class="ochk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div>+ Bônus: Guia de Voz do Professor</div>
+      <div class="oferta-item"><div class="ochk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div>+ Bônus: Calendário de Turmas 30 Dias</div>
+    </div>
+    <div class="de">De R$ 97</div>
+    <div class="preco"><sup>R$</sup>37</div>
+    <div class="parcel">ou em até 12x no cartão</div>
+    <a href="https://pay.cakto.com.br/3fmc2ep_1039096" class="btn-oferta">Quero as 50 Aulas Prontas de Yoga — R$ 37</a>
+    <div class="seg">Compra segura · Acesso imediato após o pagamento</div>
+  </div>
+</section>
+
+<!-- ⑧ FAQ — creme -->
+<section class="sec s-creme">
+  <div class="faq-wrap">
+    <div class="slabel sl-verde rev">Dúvidas</div>
+    <h2 class="faq-hed rev">Perguntas frequentes</h2>
+    <div class="faq-item rev">
+      <div class="faq-q" onclick="faq(this)">As sequências servem para qualquer nível de turma?<span class="faq-sinal">+</span></div>
+      <div class="faq-a">Sim. O kit tem sequências para iniciantes, intermediários e avançados. Cada aula indica o nível, o estilo e a duração — você escolhe a que melhor encaixa na turma do dia.</div>
+    </div>
+    <div class="faq-item rev">
+      <div class="faq-q" onclick="faq(this)">Posso adaptar as sequências do meu jeito?<span class="faq-sinal">+</span></div>
+      <div class="faq-a">Com certeza. Use como está ou adapte como quiser. O material é seu para usar nas suas aulas sem restrição.</div>
+    </div>
+    <div class="faq-item rev">
+      <div class="faq-q" onclick="faq(this)">Como recebo o material?<span class="faq-sinal">+</span></div>
+      <div class="faq-a">Em PDF, com acesso imediato após o pagamento. Funciona no celular, tablet e computador — ou imprime se preferir ter em mãos durante a aula.</div>
+    </div>
+    <div class="faq-item rev">
+      <div class="faq-q" onclick="faq(this)">Serve para quem já dá muitas aulas por semana?<span class="faq-sinal">+</span></div>
+      <div class="faq-a">É exatamente para esse perfil. Quanto mais turmas você tem, mais tempo você economiza. Professor com 10 a 20 aulas por semana sente a diferença desde a primeira semana.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑨ FOOTER — verde escuro (fecha o ciclo) -->
+<section class="footer">
+  <div class="slabel sl-verde rev" style="text-align:center">Chegou a hora</div>
+  <h2 class="footer-hed rev">Para de montar.<br><em>Começa a ensinar.</em></h2>
+  <p class="footer-sub rev">50 aulas prontas — você só precisa chegar no tapete.</p>
+  <a href="#topo-oferta" class="btn-footer rev">
+    Quero as 50 Aulas Prontas de Yoga
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+</section>
+
+<script>
+function faq(el){
+  const it=el.parentElement,op=it.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!op)it.classList.add('open');
+}
+const ob=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');ob.unobserve(x.target)}})},{threshold:.1});
+document.querySelectorAll('.rev').forEach(el=>ob.observe(el));
+</script>
+</body>
+</html>
