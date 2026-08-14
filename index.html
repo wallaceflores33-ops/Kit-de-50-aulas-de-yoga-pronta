@@ -259,25 +259,91 @@ body{font-family:'DM Sans',sans-serif;overflow-x:hidden;background:#F5F0E8}
 .op{font-family:'Fraunces',serif;font-size:28px;font-weight:900;color:var(--verde-salvia);text-align:center}
 
 /* ─── BÔNUS — branco ─── */
-.bonus-top{text-align:center;margin-bottom:48px}
-.bonus-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:860px;margin:0 auto}
+
+/* ─── MOCKUPS DOS BÔNUS ─── */
+.bonus-mockup{
+  width:100%;
+  margin-bottom:24px;
+}
+.bonus-mockup svg{
+  width:100%;
+  height:auto;
+  display:block;
+  filter:drop-shadow(0 8px 24px rgba(0,0,0,0.3));
+}
+.bonus-top{text-align:center;margin-bottom:52px}
+.bonus-top .hed{color:#fff}
+.bonus-top .slabel{color:rgba(255,255,255,.5)}
+
+.bonus-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:3px;max-width:900px;margin:0 auto;
+}
+
 .bonus-card{
-  background:var(--creme);border:1px solid #DDD8D0;
-  border-radius:12px;padding:36px 32px;
+  position:relative;overflow:hidden;
+  padding:48px 40px 44px;
 }
+.bonus-card:first-child{
+  background:#7A5230;
+  border-radius:12px 0 0 12px;
+}
+.bonus-card:last-child{
+  background:#3D6B4F;
+  border-radius:0 12px 12px 0;
+}
+
+/* número grande decorativo */
+.bonus-card::before{
+  content:attr(data-num);
+  position:absolute;
+  top:-10px;right:24px;
+  font-family:'Fraunces',serif;
+  font-size:120px;font-weight:900;font-style:italic;
+  line-height:1;
+  color:rgba(255,255,255,.07);
+  pointer-events:none;
+  user-select:none;
+}
+
 .bonus-ic{
-  width:48px;height:48px;border-radius:10px;
-  background:var(--verde-mint);
+  width:52px;height:52px;border-radius:10px;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.2);
   display:flex;align-items:center;justify-content:center;
-  margin-bottom:20px;
+  margin-bottom:24px;
 }
-.bonus-ic svg{width:22px;height:22px;stroke:var(--verde-fundo);stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.bonus-ic svg{width:24px;height:24px;stroke:#fff;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
 .bonus-badge{
-  font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--verde-salvia);margin-bottom:10px;display:block;
+  display:inline-block;
+  font-family:'Fraunces',serif;
+  font-size:13px;font-weight:900;font-style:italic;
+  letter-spacing:.04em;text-transform:uppercase;
+  color:#F0CC72;
+  margin-bottom:14px;
+  padding:5px 16px;
+  background:rgba(240,204,114,0.12);
+  border:1px solid rgba(240,204,114,0.35);
+  border-radius:100px;
 }
-.bonus-titulo{font-family:'Fraunces',serif;font-size:21px;font-weight:800;color:var(--verde-fundo);line-height:1.2;margin-bottom:10px}
-.bonus-desc{font-size:14px;font-weight:300;color:var(--texto-medio);line-height:1.7}
+.bonus-titulo{
+  font-family:'Fraunces',serif;font-size:24px;font-weight:900;
+  color:#fff;line-height:1.15;margin-bottom:14px;
+}
+.bonus-desc{
+  font-size:14px;font-weight:300;color:rgba(255,255,255,.75);line-height:1.75;
+}
+.bonus-tag{
+  display:inline-flex;align-items:center;gap:7px;
+  margin-top:24px;
+  font-size:11px;font-weight:600;letter-spacing:.06em;
+  color:rgba(255,255,255,.9);
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.2);
+  padding:6px 14px;border-radius:100px;
+}
+.bonus-tag svg{width:11px;height:11px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round}
 
 /* ─── OFERTA — terracota claro ─── */
 .oferta-box{
@@ -300,6 +366,24 @@ body{font-family:'DM Sans',sans-serif;overflow-x:hidden;background:#F5F0E8}
   display:flex;align-items:center;justify-content:center;
 }
 .ochk svg{width:9px;height:9px;stroke:var(--verde-salvia);stroke-width:2.5;fill:none;stroke-linecap:round}
+.ochk-gold{
+  background:rgba(240,204,114,.15);border-color:rgba(240,204,114,.4);
+}
+.ochk-gold svg{stroke:#F0CC72}
+.oferta-grupo-label{
+  font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--terracota);margin-bottom:6px;margin-top:4px;padding-bottom:6px;
+  border-bottom:1px solid rgba(184,92,56,.15);
+}
+.oferta-item-bonus{
+  background:rgba(240,204,114,.05);
+  border-radius:6px;padding:6px 8px;margin-left:-8px;margin-right:-8px;
+}
+.oferta-itens{
+  text-align:left;border-top:1px solid #EDE5D8;
+  margin:0 0 28px;padding-top:20px;
+  display:flex;flex-direction:column;gap:9px;
+}
 .de{font-size:13px;color:#B0A99E;text-decoration:line-through;margin-bottom:4px}
 .preco{font-family:'Fraunces',serif;font-size:66px;font-weight:900;color:var(--verde-fundo);line-height:1;margin-bottom:4px}
 .preco sup{font-size:26px;vertical-align:super}
@@ -312,6 +396,19 @@ body{font-family:'DM Sans',sans-serif;overflow-x:hidden;background:#F5F0E8}
   transition:background .18s,transform .12s;margin-bottom:14px;
 }
 .btn-oferta:hover{background:#9E4C2E;transform:translateY(-1px)}
+.garantia-box{
+  display:flex;align-items:center;gap:18px;
+  background:rgba(61,107,79,0.06);
+  border:1px solid rgba(61,107,79,0.2);
+  border-radius:10px;padding:18px 20px;
+  margin-bottom:18px;text-align:left;
+}
+.garantia-selo svg{width:52px;height:52px;flex-shrink:0}
+.garantia-titulo{
+  font-family:'Fraunces',serif;font-size:15px;font-weight:800;
+  color:var(--verde-fundo);margin-bottom:5px;
+}
+.garantia-desc{font-size:12px;font-weight:300;color:var(--texto-medio);line-height:1.6}
 .seg{font-size:12px;color:var(--texto-suave)}
 
 /* ─── FAQ — creme ─── */
@@ -428,6 +525,153 @@ body{font-family:'DM Sans',sans-serif;overflow-x:hidden;background:#F5F0E8}
     </div>
   </div>
   <div class="hero-right">
+    <div class="aula-sample">
+
+      <!-- CABEÇALHO -->
+      <div class="as-head">
+        <div class="as-eyebrow">Aula 04 · Hatha Suave</div>
+        <div class="as-titulo">Abertura de Ombros e Coluna</div>
+        <div class="as-pills">
+          <span class="as-pill dest">50 min</span>
+          <span class="as-pill">Todos os níveis</span>
+          <span class="as-pill">Manhã</span>
+        </div>
+      </div>
+
+      <!-- POSES -->
+      <div class="as-poses">
+
+        <div class="as-fase">Aquecimento</div>
+
+        <div class="as-pose">
+          <div class="pose-icon">
+            <svg viewBox="0 0 32 32" fill="none">
+              <circle cx="16" cy="5" r="2.2" fill="rgba(212,180,131,0.9)"/>
+              <path d="M16 7.2 C16 10 12 13 8 14" stroke="rgba(212,180,131,0.9)" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M12 11 C9 11 5 11 3 11" stroke="rgba(212,180,131,0.9)" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M16 7.2 L16 14 L13 20 L10 24" stroke="rgba(255,255,255,0.55)" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M16 14 L19 20 L22 24" stroke="rgba(255,255,255,0.55)" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M10 24 L8 25" stroke="rgba(255,255,255,0.4)" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M22 24 L24 25" stroke="rgba(255,255,255,0.4)" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="pose-info">
+            <div class="pose-pt">Pose da Criança</div>
+            <div class="pose-sa">Balasana</div>
+          </div>
+          <div class="pose-tempo">3 min</div>
+        </div>
+
+        <div class="as-pose">
+          <div class="pose-icon">
+            <svg viewBox="0 0 32 32" fill="none">
+              <circle cx="6" cy="9" r="2.2" fill="rgba(212,180,131,0.9)"/>
+              <path d="M8 10 C11 12 16 10 21 12 C24 13 26 13 27 13" stroke="rgba(212,180,131,0.9)" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M12 12 L12 20" stroke="rgba(255,255,255,0.55)" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M20 13 L20 21" stroke="rgba(255,255,255,0.55)" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M10 20 L14 20" stroke="rgba(255,255,255,0.4)" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M18 21 L22 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M27 13 L29 10" stroke="rgba(255,255,255,0.3)" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="pose-info">
+            <div class="pose-pt">Gato / Vaca</div>
+            <div class="pose-sa">Marjaryasana / Bitilasana</div>
+          </div>
+          <div class="pose-tempo">2 min</div>
+        </div>
+
+        <div class="as-fase">Desenvolvimento</div>
+
+        <div class="as-pose">
+          <div class="pose-icon">
+            <svg viewBox="0 0 32 32" fill="none">
+              <circle cx="6" cy="22" r="2.2" fill="rgba(212,180,131,0.9)"/>
+              <path d="M8 21 L13 16" stroke="rgba(212,180,131,0.9)" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M13 16 L19 10" stroke="rgba(212,180,131,0.9)" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M19 10 L24 17" stroke="rgba(255,255,255,0.55)" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M24 17 L26 23" stroke="rgba(255,255,255,0.55)" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M6 22 L4 24" stroke="rgba(255,255,255,0.4)" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M25 23 L27 24" stroke="rgba(255,255,255,0.4)" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="pose-info">
+            <div class="pose-pt">Cão Olhando para Baixo</div>
+            <div class="pose-sa">Adho Mukha Svanasana</div>
+          </div>
+          <div class="pose-tempo">1 min</div>
+        </div>
+
+        <div class="as-pose">
+          <div class="pose-icon">
+            <svg viewBox="0 0 32 32" fill="none">
+              <circle cx="16" cy="24" r="2" fill="rgba(212,180,131,0.9)"/>
+              <path d="M16 22 C16 18 14 14 12 12" stroke="rgba(212,180,131,0.9)" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M12 12 L6 10" stroke="rgba(212,180,131,0.9)" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M16 22 C16 18 18 14 20 12" stroke="rgba(255,255,255,0.55)" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M20 12 L26 10" stroke="rgba(255,255,255,0.55)" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M16 24 L14 30" stroke="rgba(255,255,255,0.35)" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M16 24 L18 30" stroke="rgba(255,255,255,0.35)" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="pose-info">
+            <div class="pose-pt">Pose do Coração</div>
+            <div class="pose-sa">Anahatasana</div>
+          </div>
+          <div class="pose-tempo">3 min</div>
+        </div>
+
+        <div class="as-fase">Pico</div>
+
+        <div class="as-pose">
+          <div class="pose-icon">
+            <svg viewBox="0 0 32 32" fill="none">
+              <circle cx="16" cy="4" r="2.2" fill="rgba(212,180,131,0.9)"/>
+              <path d="M16 6 L12 3" stroke="rgba(212,180,131,0.9)" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M16 6 L20 3" stroke="rgba(212,180,131,0.9)" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M16 6 L16 16" stroke="rgba(212,180,131,0.9)" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M16 16 L12 22 L10 28" stroke="rgba(255,255,255,0.55)" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M16 16 L20 20 L22 28" stroke="rgba(255,255,255,0.55)" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M10 28 L7 28" stroke="rgba(255,255,255,0.4)" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M22 28 L25 28" stroke="rgba(255,255,255,0.4)" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="pose-info">
+            <div class="pose-pt">Guerreiro I</div>
+            <div class="pose-sa">Virabhadrasana I</div>
+          </div>
+          <div class="pose-tempo">1 min cada lado</div>
+        </div>
+
+        <div class="as-fase">Finalização</div>
+
+        <div class="as-pose">
+          <div class="pose-icon">
+            <svg viewBox="0 0 32 32" fill="none">
+              <circle cx="4" cy="16" r="2.2" fill="rgba(212,180,131,0.9)"/>
+              <path d="M6 16 L24 16" stroke="rgba(212,180,131,0.9)" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M12 16 L10 21" stroke="rgba(255,255,255,0.5)" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M18 16 L20 21" stroke="rgba(255,255,255,0.5)" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M24 16 L27 19" stroke="rgba(255,255,255,0.5)" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M24 16 L27 14" stroke="rgba(255,255,255,0.5)" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="pose-info">
+            <div class="pose-pt">Savasana</div>
+            <div class="pose-sa">Pose do Cadáver</div>
+          </div>
+          <div class="pose-tempo">5 min</div>
+        </div>
+
+      </div>
+
+      <!-- RODAPÉ -->
+      <div class="as-footer">
+        <span class="as-footer-txt">+ 13 poses na versão completa</span>
+        <span class="as-footer-badge">Amostra</span>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -543,29 +787,242 @@ body{font-family:'DM Sans',sans-serif;overflow-x:hidden;background:#F5F0E8}
   </div>
 </section>
 
-<!-- ⑥ BÔNUS — branco (foco nos cards) -->
-<section class="sec s-branco">
+<!-- ⑥ BÔNUS — destaque forte, fora do padrão -->
+<section class="sec" style="background:#1C1A17;padding-top:80px;padding-bottom:80px">
   <div class="bonus-top rev">
-    <div class="slabel sl-verde">Incluído no kit</div>
-    <h2 class="hed">Dois bônus para o seu dia a dia</h2>
+    <div class="slabel">Incluído no kit</div>
+    <h2 class="hed hed-white">Dois bônus para o seu dia a dia</h2>
   </div>
   <div class="bonus-grid">
-    <div class="bonus-card rev">
+
+    <div class="bonus-card rev" data-num="1">
+
+      <!-- MOCKUP BÔNUS 1 -->
+      <div class="bonus-mockup">
+        <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
+
+          <!-- FOLHA DE TRÁS (inclinada) -->
+          <g transform="rotate(-8, 160, 100)">
+            <rect x="60" y="30" width="130" height="165" rx="4" fill="#F0E8D8" opacity="0.5"/>
+          </g>
+
+          <!-- CADERNO ESPIRAL — corpo -->
+          <rect x="72" y="22" width="138" height="170" rx="5" fill="#8B6340"/>
+          <!-- capa textura -->
+          <rect x="72" y="22" width="138" height="170" rx="5" fill="url(#grain1)" opacity="0.3"/>
+          <!-- faixa lateral terracota -->
+          <rect x="72" y="22" width="22" height="170" rx="5" fill="#6B4A28"/>
+          <!-- espiral -->
+          <g stroke="rgba(255,255,255,0.55)" stroke-width="1.5" fill="none">
+            <ellipse cx="83" cy="50" rx="5" ry="7"/>
+            <ellipse cx="83" cy="70" rx="5" ry="7"/>
+            <ellipse cx="83" cy="90" rx="5" ry="7"/>
+            <ellipse cx="83" cy="110" rx="5" ry="7"/>
+            <ellipse cx="83" cy="130" rx="5" ry="7"/>
+            <ellipse cx="83" cy="150" rx="5" ry="7"/>
+            <ellipse cx="83" cy="170" rx="5" ry="7"/>
+          </g>
+          <!-- linha horizontal divisória do título -->
+          <rect x="94" y="60" width="104" height="2" rx="1" fill="rgba(255,255,255,0.2)"/>
+          <!-- título na capa -->
+          <text x="146" y="48" font-family="Georgia,serif" font-size="9" font-weight="700" fill="rgba(255,255,255,0.95)" text-anchor="middle">GUIA DE VOZ</text>
+          <text x="146" y="58" font-family="Georgia,serif" font-size="8" fill="rgba(255,255,255,0.7)" text-anchor="middle">do Professor</text>
+          <!-- linhas de conteúdo simuladas -->
+          <rect x="96" y="72" width="90" height="2.5" rx="1" fill="rgba(255,255,255,0.25)"/>
+          <rect x="96" y="81" width="75" height="2.5" rx="1" fill="rgba(255,255,255,0.18)"/>
+          <rect x="96" y="90" width="85" height="2.5" rx="1" fill="rgba(255,255,255,0.18)"/>
+          <rect x="96" y="99" width="68" height="2.5" rx="1" fill="rgba(255,255,255,0.18)"/>
+          <rect x="96" y="115" width="90" height="2.5" rx="1" fill="rgba(255,255,255,0.25)"/>
+          <rect x="96" y="124" width="80" height="2.5" rx="1" fill="rgba(255,255,255,0.18)"/>
+          <rect x="96" y="133" width="72" height="2.5" rx="1" fill="rgba(255,255,255,0.18)"/>
+          <rect x="96" y="142" width="88" height="2.5" rx="1" fill="rgba(255,255,255,0.18)"/>
+
+          <!-- FOLHA SOLTA 1 — à direita, virada -->
+          <g transform="rotate(6, 235, 120)">
+            <rect x="200" y="55" width="95" height="125" rx="3" fill="#EDE5D5"/>
+            <!-- cabeçalho da folha -->
+            <rect x="200" y="55" width="95" height="22" rx="3" fill="#7A5230"/>
+            <text x="247" y="70" font-family="Georgia,serif" font-size="7" font-weight="700" fill="white" text-anchor="middle">ENTRADA</text>
+            <!-- linha de pose -->
+            <!-- stick figure pequenininho -->
+            <circle cx="215" cy="92" r="4" fill="none" stroke="#7A5230" stroke-width="1.2"/>
+            <line x1="215" y1="96" x2="215" y2="108" stroke="#7A5230" stroke-width="1.2"/>
+            <line x1="215" y1="100" x2="209" y2="105" stroke="#7A5230" stroke-width="1.2"/>
+            <line x1="215" y1="100" x2="221" y2="105" stroke="#7A5230" stroke-width="1.2"/>
+            <line x1="215" y1="108" x2="210" y2="116" stroke="#7A5230" stroke-width="1.2"/>
+            <line x1="215" y1="108" x2="220" y2="116" stroke="#7A5230" stroke-width="1.2"/>
+            <!-- texto ao lado -->
+            <rect x="226" y="88" width="58" height="2" rx="1" fill="#B8A898"/>
+            <rect x="226" y="94" width="46" height="2" rx="1" fill="#C8BAA8"/>
+            <rect x="226" y="100" width="52" height="2" rx="1" fill="#C8BAA8"/>
+            <!-- divisor -->
+            <rect x="204" y="120" width="87" height="1" rx="0.5" fill="#D5CBBC"/>
+            <!-- segunda pose -->
+            <circle cx="215" cy="134" r="4" fill="none" stroke="#3D6B4F" stroke-width="1.2"/>
+            <line x1="215" y1="138" x2="215" y2="148" stroke="#3D6B4F" stroke-width="1.2"/>
+            <line x1="215" y1="142" x2="209" y2="147" stroke="#3D6B4F" stroke-width="1.2"/>
+            <line x1="215" y1="142" x2="221" y2="147" stroke="#3D6B4F" stroke-width="1.2"/>
+            <line x1="215" y1="148" x2="212" y2="156" stroke="#3D6B4F" stroke-width="1.2"/>
+            <line x1="215" y1="148" x2="218" y2="156" stroke="#3D6B4F" stroke-width="1.2"/>
+            <rect x="226" y="130" width="55" height="2" rx="1" fill="#B8A898"/>
+            <rect x="226" y="136" width="44" height="2" rx="1" fill="#C8BAA8"/>
+            <rect x="226" y="142" width="50" height="2" rx="1" fill="#C8BAA8"/>
+          </g>
+
+          <!-- FOLHA SOLTA 2 — na frente à esquerda -->
+          <g transform="rotate(-4, 58, 150)">
+            <rect x="22" y="110" width="82" height="105" rx="3" fill="#F5F0E8"/>
+            <rect x="22" y="110" width="82" height="16" rx="3" fill="#3D6B4F"/>
+            <text x="63" y="121" font-family="Georgia,serif" font-size="6.5" font-weight="700" fill="white" text-anchor="middle">SAÍDA</text>
+            <rect x="28" y="134" width="60" height="2" rx="1" fill="#B8A898"/>
+            <rect x="28" y="140" width="50" height="2" rx="1" fill="#C8BAA8"/>
+            <rect x="28" y="146" width="55" height="2" rx="1" fill="#C8BAA8"/>
+            <rect x="28" y="152" width="44" height="2" rx="1" fill="#C8BAA8"/>
+            <rect x="28" y="164" width="60" height="2" rx="1" fill="#B8A898"/>
+            <rect x="28" y="170" width="48" height="2" rx="1" fill="#C8BAA8"/>
+            <rect x="28" y="176" width="52" height="2" rx="1" fill="#C8BAA8"/>
+            <rect x="28" y="182" width="38" height="2" rx="1" fill="#C8BAA8"/>
+          </g>
+
+          <defs>
+            <filter id="grain1">
+              <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+              <feColorMatrix type="saturate" values="0"/>
+            </filter>
+          </defs>
+        </svg>
+      </div>
       <div class="bonus-ic">
         <svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg>
       </div>
-      <span class="bonus-badge">Bônus 1</span>
+      <span class="bonus-badge">✦ Bônus 1</span>
       <div class="bonus-titulo">Guia de Voz do Professor</div>
       <div class="bonus-desc">Frases prontas de transição e condução para cada pose — como chamar a entrada, o ajuste e a saída com naturalidade. Você para de improvisar no meio da aula e começa a conduzir com mais presença.</div>
+      <div class="bonus-tag">
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Incluso no kit
+      </div>
     </div>
-    <div class="bonus-card rev">
+
+    <div class="bonus-card rev" data-num="2">
+
+      <!-- MOCKUP BÔNUS 2 -->
+      <div class="bonus-mockup">
+        <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
+
+          <!-- SOMBRA DO CALENDÁRIO -->
+          <rect x="42" y="28" width="236" height="158" rx="8" fill="rgba(0,0,0,0.25)"/>
+
+          <!-- CORPO DO CALENDÁRIO -->
+          <rect x="38" y="24" width="236" height="158" rx="8" fill="#EDE5D5"/>
+
+          <!-- HEADER VERDE -->
+          <rect x="38" y="24" width="236" height="36" rx="8" fill="#3D6B4F"/>
+          <rect x="38" y="44" width="236" height="16" fill="#3D6B4F"/>
+
+          <!-- argolas do calendário -->
+          <ellipse cx="90" cy="24" rx="5" ry="7" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.8"/>
+          <ellipse cx="160" cy="24" rx="5" ry="7" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.8"/>
+          <ellipse cx="230" cy="24" rx="5" ry="7" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.8"/>
+
+          <!-- Título do calendário -->
+          <text x="156" y="43" font-family="Georgia,serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">CALENDÁRIO DE TURMAS</text>
+          <text x="156" y="54" font-family="Georgia,serif" font-size="7.5" fill="rgba(255,255,255,0.7)" text-anchor="middle">30 DIAS · GRADE PRONTA</text>
+
+          <!-- CABEÇALHO DOS DIAS DA SEMANA -->
+          <rect x="38" y="60" width="236" height="14" fill="rgba(61,107,79,0.15)"/>
+          <text x="61" y="70" font-family="Arial,sans-serif" font-size="6" font-weight="700" fill="#3D6B4F" text-anchor="middle">SEG</text>
+          <text x="95" y="70" font-family="Arial,sans-serif" font-size="6" font-weight="700" fill="#3D6B4F" text-anchor="middle">TER</text>
+          <text x="129" y="70" font-family="Arial,sans-serif" font-size="6" font-weight="700" fill="#3D6B4F" text-anchor="middle">QUA</text>
+          <text x="163" y="70" font-family="Arial,sans-serif" font-size="6" font-weight="700" fill="#3D6B4F" text-anchor="middle">QUI</text>
+          <text x="197" y="70" font-family="Arial,sans-serif" font-size="6" font-weight="700" fill="#3D6B4F" text-anchor="middle">SEX</text>
+          <text x="231" y="70" font-family="Arial,sans-serif" font-size="6" font-weight="700" fill="#7A5230" text-anchor="middle">SÁB</text>
+          <text x="257" y="70" font-family="Arial,sans-serif" font-size="6" font-weight="700" fill="#C0B0A0" text-anchor="middle">DOM</text>
+
+          <!-- GRADE — linha separadora -->
+          <line x1="38" y1="74" x2="274" y2="74" stroke="#D5CBBC" stroke-width="0.8"/>
+
+          <!-- SEMANA 1 -->
+          <!-- célula com aula destacada -->
+          <rect x="44" y="76" width="30" height="24" rx="3" fill="rgba(61,107,79,0.12)" stroke="#3D6B4F" stroke-width="0.8"/>
+          <text x="59" y="85" font-family="Arial,sans-serif" font-size="5.5" font-weight="700" fill="#3D6B4F" text-anchor="middle">Aula 01</text>
+          <text x="59" y="93" font-family="Arial,sans-serif" font-size="4.5" fill="#3D6B4F" text-anchor="middle">Hatha · 60m</text>
+          <!-- células normais -->
+          <rect x="78" y="76" width="30" height="24" rx="3" fill="rgba(0,0,0,0.04)"/>
+          <text x="93" y="85" font-family="Arial,sans-serif" font-size="5.5" fill="#6B5A4A" text-anchor="middle">Aula 02</text>
+          <text x="93" y="93" font-family="Arial,sans-serif" font-size="4.5" fill="#9A8A7A" text-anchor="middle">Yin · 90m</text>
+          <rect x="112" y="76" width="30" height="24" rx="3" fill="rgba(0,0,0,0.04)"/>
+          <text x="127" y="85" font-family="Arial,sans-serif" font-size="5.5" fill="#6B5A4A" text-anchor="middle">Aula 03</text>
+          <text x="127" y="93" font-family="Arial,sans-serif" font-size="4.5" fill="#9A8A7A" text-anchor="middle">Vinyasa</text>
+          <rect x="146" y="76" width="30" height="24" rx="3" fill="rgba(0,0,0,0.04)"/>
+          <text x="161" y="85" font-family="Arial,sans-serif" font-size="5.5" fill="#6B5A4A" text-anchor="middle">Aula 04</text>
+          <text x="161" y="93" font-family="Arial,sans-serif" font-size="4.5" fill="#9A8A7A" text-anchor="middle">Hatha · 50m</text>
+          <!-- célula terracota especial -->
+          <rect x="180" y="76" width="30" height="24" rx="3" fill="rgba(122,82,48,0.15)" stroke="#7A5230" stroke-width="0.8"/>
+          <text x="195" y="85" font-family="Arial,sans-serif" font-size="5.5" font-weight="700" fill="#7A5230" text-anchor="middle">Aula 05</text>
+          <text x="195" y="93" font-family="Arial,sans-serif" font-size="4.5" fill="#7A5230" text-anchor="middle">Power · 75m</text>
+          <!-- sábado -->
+          <rect x="214" y="76" width="30" height="24" rx="3" fill="rgba(0,0,0,0.03)"/>
+          <text x="229" y="88" font-family="Arial,sans-serif" font-size="5" fill="#B0A090" text-anchor="middle">—</text>
+
+          <line x1="38" y1="102" x2="274" y2="102" stroke="#D5CBBC" stroke-width="0.8"/>
+
+          <!-- SEMANA 2 -->
+          <rect x="44" y="104" width="30" height="24" rx="3" fill="rgba(0,0,0,0.04)"/>
+          <text x="59" y="113" font-family="Arial,sans-serif" font-size="5.5" fill="#6B5A4A" text-anchor="middle">Aula 06</text>
+          <text x="59" y="121" font-family="Arial,sans-serif" font-size="4.5" fill="#9A8A7A" text-anchor="middle">Yin · 60m</text>
+          <rect x="78" y="104" width="30" height="24" rx="3" fill="rgba(61,107,79,0.12)" stroke="#3D6B4F" stroke-width="0.8"/>
+          <text x="93" y="113" font-family="Arial,sans-serif" font-size="5.5" font-weight="700" fill="#3D6B4F" text-anchor="middle">Aula 07</text>
+          <text x="93" y="121" font-family="Arial,sans-serif" font-size="4.5" fill="#3D6B4F" text-anchor="middle">Hatha · 60m</text>
+          <rect x="112" y="104" width="30" height="24" rx="3" fill="rgba(0,0,0,0.04)"/>
+          <text x="127" y="113" font-family="Arial,sans-serif" font-size="5.5" fill="#6B5A4A" text-anchor="middle">Aula 08</text>
+          <text x="127" y="121" font-family="Arial,sans-serif" font-size="4.5" fill="#9A8A7A" text-anchor="middle">Vinyasa</text>
+          <rect x="146" y="104" width="30" height="24" rx="3" fill="rgba(0,0,0,0.04)"/>
+          <text x="161" y="113" font-family="Arial,sans-serif" font-size="5.5" fill="#6B5A4A" text-anchor="middle">Aula 09</text>
+          <text x="161" y="121" font-family="Arial,sans-serif" font-size="4.5" fill="#9A8A7A" text-anchor="middle">Restaur.</text>
+          <rect x="180" y="104" width="30" height="24" rx="3" fill="rgba(0,0,0,0.04)"/>
+          <text x="195" y="113" font-family="Arial,sans-serif" font-size="5.5" fill="#6B5A4A" text-anchor="middle">Aula 10</text>
+          <text x="195" y="121" font-family="Arial,sans-serif" font-size="4.5" fill="#9A8A7A" text-anchor="middle">Power</text>
+          <rect x="214" y="104" width="30" height="24" rx="3" fill="rgba(0,0,0,0.03)"/>
+          <text x="229" y="116" font-family="Arial,sans-serif" font-size="5" fill="#B0A090" text-anchor="middle">—</text>
+
+          <line x1="38" y1="130" x2="274" y2="130" stroke="#D5CBBC" stroke-width="0.8"/>
+
+          <!-- SEMANA 3 — mais condensada -->
+          <rect x="44" y="132" width="30" height="22" rx="3" fill="rgba(0,0,0,0.04)"/>
+          <text x="59" y="145" font-family="Arial,sans-serif" font-size="5" fill="#9A8A7A" text-anchor="middle">Aula 11</text>
+          <rect x="78" y="132" width="30" height="22" rx="3" fill="rgba(0,0,0,0.04)"/>
+          <text x="93" y="145" font-family="Arial,sans-serif" font-size="5" fill="#9A8A7A" text-anchor="middle">Aula 12</text>
+          <rect x="112" y="132" width="30" height="22" rx="3" fill="rgba(122,82,48,0.12)" stroke="#7A5230" stroke-width="0.8"/>
+          <text x="127" y="145" font-family="Arial,sans-serif" font-size="5" font-weight="700" fill="#7A5230" text-anchor="middle">Aula 13</text>
+          <rect x="146" y="132" width="30" height="22" rx="3" fill="rgba(0,0,0,0.04)"/>
+          <text x="161" y="145" font-family="Arial,sans-serif" font-size="5" fill="#9A8A7A" text-anchor="middle">Aula 14</text>
+          <rect x="180" y="132" width="30" height="22" rx="3" fill="rgba(61,107,79,0.12)" stroke="#3D6B4F" stroke-width="0.8"/>
+          <text x="195" y="145" font-family="Arial,sans-serif" font-size="5" font-weight="700" fill="#3D6B4F" text-anchor="middle">Aula 15</text>
+
+          <!-- RODAPÉ LEGENDA -->
+          <rect x="38" y="156" width="236" height="26" rx="8" fill="rgba(61,107,79,0.08)"/>
+          <rect x="38" y="156" width="236" height="10" fill="rgba(61,107,79,0.08)"/>
+          <!-- legendas -->
+          <rect x="48" y="163" width="8" height="8" rx="2" fill="rgba(61,107,79,0.2)" stroke="#3D6B4F" stroke-width="0.8"/>
+          <text x="60" y="170" font-family="Arial,sans-serif" font-size="5.5" fill="#4A4640">Hatha / Vinyasa</text>
+          <rect x="130" y="163" width="8" height="8" rx="2" fill="rgba(122,82,48,0.15)" stroke="#7A5230" stroke-width="0.8"/>
+          <text x="142" y="170" font-family="Arial,sans-serif" font-size="5.5" fill="#4A4640">Power / Yin</text>
+          <text x="210" y="170" font-family="Arial,sans-serif" font-size="5" fill="#9A8A7A">30 dias</text>
+        </svg>
+      </div>
       <div class="bonus-ic">
         <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
       </div>
-      <span class="bonus-badge">Bônus 2</span>
+      <span class="bonus-badge">✦ Bônus 2</span>
       <div class="bonus-titulo">Calendário de Turmas — 30 Dias</div>
       <div class="bonus-desc">Grade mensal pronta indicando qual sequência usar em cada aula, organizada por progressão e variedade de estilo. Seu mês de aulas inteiro planejado em menos de 5 minutos.</div>
+      <div class="bonus-tag">
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Incluso no kit
+      </div>
     </div>
+
   </div>
 </section>
 
@@ -576,18 +1033,51 @@ body{font-family:'DM Sans',sans-serif;overflow-x:hidden;background:#F5F0E8}
     <div class="oferta-nome">Kit 50 Aulas Prontas de Yoga</div>
     <h2 class="oferta-hed">Sequências completas.<br>Acesso imediato.</h2>
     <div class="oferta-itens">
-      <div class="oferta-item"><div class="ochk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div>50 sequências prontas para dar</div>
-      <div class="oferta-item"><div class="ochk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div>5 estilos — Hatha, Vinyasa, Yin, Power, Restaurativo</div>
-      <div class="oferta-item"><div class="ochk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div>PDF — funciona no celular, tablet e impresso</div>
-      <div class="oferta-item"><div class="ochk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div>Acesso vitalício</div>
-      <div class="oferta-item"><div class="ochk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div>+ Bônus: Guia de Voz do Professor</div>
-      <div class="oferta-item"><div class="ochk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div>+ Bônus: Calendário de Turmas 30 Dias</div>
+
+      <div class="oferta-grupo-label">Kit Principal</div>
+
+      <div class="oferta-item"><div class="ochk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div><span><strong>50 sequências completas</strong> prontas para dar</span></div>
+      <div class="oferta-item"><div class="ochk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div><span>5 estilos — Hatha, Vinyasa, Yin, Power, Restaurativo</span></div>
+      <div class="oferta-item"><div class="ochk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div><span>3 níveis — Iniciante, Intermediário e Avançado</span></div>
+      <div class="oferta-item"><div class="ochk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div><span>Duração variada — aulas de 45, 50, 60, 75 e 90 min</span></div>
+      <div class="oferta-item"><div class="ochk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div><span>Tema, objetivo e progressão de poses em cada aula</span></div>
+      <div class="oferta-item"><div class="ochk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div><span>Nome das poses em português e sânscrito</span></div>
+      <div class="oferta-item"><div class="ochk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div><span>Tempo de cada pose para manter o ritmo</span></div>
+      <div class="oferta-item"><div class="ochk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div><span>Sugestão de playlist para cada estilo</span></div>
+      <div class="oferta-item"><div class="ochk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div><span>Formato PDF — celular, tablet e impresso</span></div>
+      <div class="oferta-item"><div class="ochk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div><span>Acesso vitalício — suas aulas para sempre</span></div>
+
+      <div class="oferta-grupo-label" style="margin-top:10px">Bônus Incluídos</div>
+
+      <div class="oferta-item oferta-item-bonus"><div class="ochk ochk-gold"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div><span><strong>Bônus 1:</strong> Guia de Voz do Professor — frases prontas de condução pose a pose</span></div>
+      <div class="oferta-item oferta-item-bonus"><div class="ochk ochk-gold"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div><span><strong>Bônus 2:</strong> Calendário de Turmas 30 Dias — grade mensal pronta para usar</span></div>
+
     </div>
     <div class="de">De R$ 97</div>
     <div class="preco"><sup>R$</sup>37</div>
     <div class="parcel">ou em até 12x no cartão</div>
     <a href="https://pay.cakto.com.br/3fmc2ep_1039096" class="btn-oferta">Quero as 50 Aulas Prontas de Yoga — R$ 37</a>
-    <div class="seg">Compra segura · Acesso imediato após o pagamento</div>
+
+    <!-- GARANTIA -->
+    <div class="garantia-box">
+      <div class="garantia-selo">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- escudo -->
+          <path d="M32 4 L54 14 L54 34 C54 47 43 57 32 61 C21 57 10 47 10 34 L10 14 Z" fill="rgba(61,107,79,0.15)" stroke="#3D6B4F" stroke-width="2"/>
+          <!-- check -->
+          <path d="M20 32 L28 40 L44 24" stroke="#3D6B4F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- 30 -->
+          <text x="32" y="36" font-family="Georgia,serif" font-size="13" font-weight="700" fill="#1C3228" text-anchor="middle">30</text>
+          <text x="32" y="45" font-family="Arial,sans-serif" font-size="5.5" font-weight="700" fill="#3D6B4F" text-anchor="middle" letter-spacing="1">DIAS</text>
+        </svg>
+      </div>
+      <div class="garantia-txt">
+        <div class="garantia-titulo">Garantia de 30 dias</div>
+        <div class="garantia-desc">Se por qualquer motivo você não ficar satisfeito, devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.</div>
+      </div>
+    </div>
+
+    <div class="seg">🔒 Compra segura · Acesso imediato após o pagamento</div>
   </div>
 </section>
 
